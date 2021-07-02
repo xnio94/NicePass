@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div class="myDiv">
+    <!--        <H2 id="hostname">()</H2>-->
+    <!--        <input type="text" autocomplete="off" name="password" id="13">-->
+    <!--        <br><br>-->
+    <label for="host">Host:</label>
+    <input type="text" autocomplete="off" name="host" id="host">
+    <label for="password">Password:</label>
+    <input type="password" autocomplete="off" name="password" id="password" autofocus>
+    <br><br>
+    <button id="generate">Generate Password</button>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>password Copied</p>
+    </div>
+</div>
+<!--    <div class="myDiv2 col">-->
+<!--        <H2>Enter Master password</H2>-->
+<!--        <input type="password" autocomplete="off" id="password">-->
+<!--        <br><br>-->
+<!--        <button id="save">Save password</button>-->
+<!--    </div>-->
+
+
+<script src="hashV1.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@keyframes color-change {
+    0% { color: #d0e; }
+    50% { color:  #a05; }
+    100% { color: #d0e; }
+}
+.generate{
+    animation: color-change 150ms infinite;
+    font-weight: bold;
+}
