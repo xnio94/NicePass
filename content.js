@@ -64,30 +64,36 @@ const modalStyle = `<style>
 let nicePassStyle = htmlToElement(modalStyle);
 let nicePassModalElement = htmlToElement(modalHtml);
 
-
+//************************************************************************
+//************************************************************************
 //************************************ using NicePass button
-window.addEventListener('load', function () {
-  let inputs = document.getElementsByTagName('input');
-  let passwords = [];
-  for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].type.toLowerCase() == 'password') {
-      passwords.push(inputs[i])
-    }
-  }
+chrome.storage.sync.get("useNicePassLink", ({useNicePassLink}) => {
+  if (useNicePassLink) {
+    window.addEventListener('load', function () {
+      let inputs = document.getElementsByTagName('input');
+      let passwords = [];
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type.toLowerCase() == 'password') {
+          passwords.push(inputs[i])
+        }
+      }
 
-  if (passwords.length > 0) {
-    let field = passwords[0];
-    let a = document.createElement('a');
-    a.innerHTML = 'NicePass';
-    a.className = "generate";
-    a.href = '#';
+      if (passwords.length > 0) {
+        let field = passwords[0];
+        let a = document.createElement('a');
+        a.innerHTML = 'NicePass';
+        a.className = "generate";
+        a.href = '#';
 
-    a.onclick = async function () {
-      generateAndFillPassIn(field);
-    };
-    field.parentNode.append(a);
+        a.onclick = async function () {
+          generateAndFillPassIn(field);
+        };
+        field.parentNode.append(a);
+      }
+    });
   }
 });
+
 //************************************************************************
 //************************************************************************
 //************************************ using Ctrl double Click
