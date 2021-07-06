@@ -1,3 +1,12 @@
+/* in dart :
+ String masterPassword = "anas";
+ var msgUint8 = utf8.encode(masterPassword); //js: msgUint8 = new
+ TextEncoder().encode(masterPassword); var bytes = sha256.convert(msgUint8).bytes;//js:  bytes
+ = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', msgUint8))); var passwordHash
+ = bytes.sublist(0,5).map((element) => element.toRadixString(36)).toList().join(); //js:
+ passwordHash = hashArray.slice(0, 5).map(b => b.toString(36)).join(''); print('pass =
+ '+passwordHash); */
+
 async function hashV1(signature) {
   //algorithm V1
   const msgUint8 = new TextEncoder().encode(signature);
@@ -19,3 +28,5 @@ async function hashV1(signature) {
 //
 // }
 // console.log(x);
+
+

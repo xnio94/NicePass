@@ -1,18 +1,16 @@
-let passwordHash = 'sarita';
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({passwordHash});
-
+  useCtrlEnter = true;
+  chrome.storage.sync.set({useCtrlEnter});
 });
 
 
 CONTEXT_MENU_ID = "myContextMenuId";
 chrome.runtime.onInstalled.addListener(function () {
   chrome.contextMenus.create({
-      title: 'NicePass',
-      contexts: ["editable"],
-      id: CONTEXT_MENU_ID
-    },
-  );
+    title: 'NicePass',
+    contexts: ["editable"],
+    id: CONTEXT_MENU_ID
+  });
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
