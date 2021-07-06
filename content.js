@@ -8,7 +8,7 @@ function htmlToElement(html) {
 
 const modalHtml = `<div id="myModal" class="modal center">
     <div class="modal-content center">
-        <p>` + 'Enter Your Password: anas' + `</p>
+        <p>` + 'Enter Your Password: (' + window.location.hostname + ')' + `</p>
         <input type="password" autocomplete="off" name="mainPassword" id="mainPassword">
         <br><br>
         <button class="nicePassButton" id="generatePass">Generate Password</button>
@@ -134,8 +134,8 @@ async function generateAndFillPassIn(field) {
   // https://stackoverflow.com/questions/9752963/get-domain-name-without-subdomains-using-javascript
   let host = window.location.hostname;
   //let password = prompt("Enter Your Password (" + host + ")");
-  let password = await myPrompt('Hey');
-
+  let password = await myPrompt();
+  //console.log("pass = " + password);
   // var p = new Promise(function (resolve, reject) {
   //   chrome.storage.sync.get("passwordHash", ({passwordHash}) => {
   //     resolve(passwordHash);
@@ -153,19 +153,19 @@ async function generateAndFillPassIn(field) {
 }
 
 
-function myPrompt(message) {
-  //document.getElementById("myModal")?.remove()
+let passwordField = nicePassModalElement.children[0].children[1];
+let generate = nicePassModalElement.children[0].children[4];
+
+passwordField.addEventListener("keyup", function (event) {
+  if (event.code === "Enter") {
+    event.preventDefault();
+    generate.click();
+  }
+});
+
+function myPrompt() {
   document.head.append(nicePassStyle);
   document.body.append(nicePassModalElement);
-  let passwordField = nicePassModalElement.children[0].children[1];
-  let generate = nicePassModalElement.children[0].children[4];
-
-  passwordField.addEventListener("keyup", function (event) {
-    if (event.code === "Enter") {
-      event.preventDefault();
-      generate.click();
-    }
-  });
 
   let passwordPromise = new Promise(function (resolve, reject) {
 
@@ -173,11 +173,11 @@ function myPrompt(message) {
       resolve(passwordField.value);
       passwordField.value = "";
       generate.removeEventListener('click', clicked);
-      nicePassModalElement.remove();//.style.display = "none"
+      nicePassModalElement.style.display = "none";
+      nicePassModalElement.remove();
     }
 
     generate.addEventListener("click", clicked);
-
   });
 
 

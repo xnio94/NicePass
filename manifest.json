@@ -1,6 +1,6 @@
 {
   "name": "NicePass",
-  "description": "secure password manager that doesnt store your passwords",
+  "description": "NicePass is the lightest and the most secure password manager",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
@@ -12,6 +12,7 @@
     "scripting",
     "contextMenus"
   ],
+  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": [
