@@ -1,4 +1,3 @@
-/* Popup container - can be anything you want */
 
 .popup {
     position: relative;
@@ -12,7 +11,7 @@
 }
 
 
-/* The actual popup */
+
 
 .popup .popuptext {
     visibility: hidden;
@@ -30,7 +29,6 @@
 }
 
 
-/* Popup arrow */
 /*
 .popup .popuptext::after {
   content: "";
@@ -43,7 +41,6 @@
   border-color: #555 transparent transparent transparent;
 }
 */
-/* NEW ARROW */
 .popup .popuptext::after {
     content: "";
     position: absolute;

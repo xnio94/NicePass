@@ -1,3 +1,5 @@
+//************************************************************************
+//************************************************************************
 //************************************ modal
 function htmlToElement(html) {
   var template = document.createElement('template');
@@ -18,13 +20,13 @@ const modalHtml = `<div id="myModal" class="modal center">
 
 const modalStyle = `<style>
 .modal {
-    display: none; /* Hidden by default */
-    z-index: 1; /* Sit on top */
+    display: none;
+    z-index: 1;
     left: 33%;
     top: 25%;
-    width: 33%; /* Full width */
-    height: auto; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    width: 33%; 
+    height: auto; 
+    overflow: auto;
 
 }
 .modal-content {
@@ -68,6 +70,7 @@ let nicePassModalElement = htmlToElement(modalHtml);
 //************************************************************************
 //************************************ using NicePass button
 chrome.storage.sync.get("useNicePassLink", ({useNicePassLink}) => {
+  console.log("val = " + useNicePassLink)
   if (useNicePassLink) {
     window.addEventListener('load', function () {
       let inputs = document.getElementsByTagName('input');
@@ -86,7 +89,7 @@ chrome.storage.sync.get("useNicePassLink", ({useNicePassLink}) => {
         a.href = '#';
 
         a.onclick = async function () {
-          generateAndFillPassIn(field);
+          await generateAndFillPassIn(field);
         };
         field.parentNode.append(a);
       }
@@ -144,7 +147,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 //************************************************************************
 //************************************ generateAndFillPassIn Function
 async function generateAndFillPassIn(field) {
-  // parse hostname :
+  // todo: parse hostname :
   // https://stackoverflow.com/questions/9752963/get-domain-name-without-subdomains-using-javascript
   let host = window.location.hostname;
   //let password = prompt("Enter Your Password (" + host + ")");
