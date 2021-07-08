@@ -1,4 +1,12 @@
-<img src="https://github.com/xnio94/NicePass-chrome/blob/main/images/logo.png?raw=true">
+<p align="center">
+  <a href="#">
+    <img
+      alt="Node.js"
+      src="https://github.com/xnio94/NicePass-chrome/blob/main/images/logo.png?raw=true"
+    />
+  </a>
+</p>
+
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>NicePass is the lightest and the most secure password manager.</p>
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Why using NicePass :</strong></p>
 <ul style="list-style-type: disc;">
@@ -22,8 +30,14 @@
     <li>website domain name referred to as <em><span style='font-family:"Times New Roman";'>h</span></em>. (for example github.com)</li>
     <li>main password referred to as <em><span style='font-family:"Times New Roman";'>m</span></em>.</li>
 </ul>
+
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>and output a 25-character password &nbsp;using the following formula:</p>
-<p><img src="https://raw.githubusercontent.com/xnio94/NicePass-chrome/main/images/hashv1.png"></p>
+<p align="center">
+    <img
+      alt="Node.js"
+      src="https://raw.githubusercontent.com/xnio94/NicePass-chrome/main/images/hashv1.png"
+    />
+</p>
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>Where:</p>
 <ul style="list-style-type: disc;">
     <li><em>+</em> : is string concatenation.</li>
