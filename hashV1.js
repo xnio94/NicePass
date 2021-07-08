@@ -5,7 +5,7 @@
  var text = "anas maghraoui";
  var bytes = utf8.encode(text);
  for (int i = 0; i < 1000; i++) bytes = sha256.convert(bytes).bytes;
- var pass = base64Encode(bytes.sublist(0, 30)) + '+@aA0';
+ var pass = base64Encode(bytes.sublist(0, 15)) + '+@aA0';
  print(pass);
 */
 
@@ -15,23 +15,8 @@ async function hashV1(signature) {
   for (i = 0; i < 1000; i++)
     hashBuffer = await crypto.subtle.digest('SHA-256', hashBuffer);
   let hashArray = Array.from(new Uint8Array(hashBuffer));
-  return base64Encode(hashArray.slice(0, 30)) + '+@aA0';
+  return base64Encode(hashArray.slice(0, 15)) + '+@aA0';
 }
-
-//************* todo: make short passwords bruteforce proof apply SHA256 N=10000 time
-// x="mypin";
-// for(i=0;i<10000;i++){
-//
-//   let msgUint8 = new TextEncoder().encode(x);
-//   let hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
-//   let hashArray = Array.from(new Uint8Array(hashBuffer));
-//   let passwordHash = hashArray.slice(0, 5).map(b => b.toString(36)).join('');
-//
-//   x= passwordHash;
-//
-// }
-// console.log(x);
-
 
 function base64Encode(bytes) {
   i = 0;
