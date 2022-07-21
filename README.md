@@ -27,7 +27,7 @@
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Create a NicePass implementation for another platform:&nbsp;</strong></p>
 <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>NicePass generate passwords from two inputs</p>
 <ul style="list-style-type: disc;">
-    <li>website domain name referred to as <em><span style='font-family:"Times New Roman";'>h</span></em>. (for example github.com)</li>
+    <li>website domain name referred to in the formula as <em><span style='font-family:"Times New Roman";'>h</span></em> (for example github.com).</li>
     <li>main password referred to as <em><span style='font-family:"Times New Roman";'>m</span></em>.</li>
 </ul>
 
